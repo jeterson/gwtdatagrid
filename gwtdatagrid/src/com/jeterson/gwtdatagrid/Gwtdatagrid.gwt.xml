@@ -4,13 +4,21 @@
 <module rename-to='gwtdatagrid'>
 	<inherits name='com.google.gwt.user.User' />
 
-	<inherits name='com.google.gwt.user.theme.clean.Clean' />
+	
 	<inherits name="gwt.material.design.jquery.JQuery" />
 
 	<entry-point class='com.jeterson.gwtdatagrid.client.Gwtdatagrid' />
 
+	<stylesheet src="css/bootstrap/bootstrap.min.css"/>
+	<stylesheet src="css/bootstrap/datatables-bootstrap.css"/>
+	<stylesheet src="css/bootstrap/datatables.min.css"/>
+	<stylesheet src="css/gwtdatagrid.css"/>
+	
+
 	<source path='client' />
 	<source path='shared' />
+
+	
 
 	<add-linker name="xsiframe" />
 </module>

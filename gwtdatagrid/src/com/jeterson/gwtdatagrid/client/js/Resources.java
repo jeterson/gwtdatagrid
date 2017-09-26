@@ -1,12 +1,11 @@
-package com.jeterson.gwtdatagrid.client;
+package com.jeterson.gwtdatagrid.client.js;
 
-import java.util.ArrayList;
-
-import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.core.shared.GWT;
+import com.google.gwt.resources.client.ClientBundle;
+import com.google.gwt.resources.client.TextResource;
 
 /**
- * <code>Thead</code> element
- * 
+ * Scripts de dependencias  
  * <br/>
  * 
  * <br/>
@@ -26,18 +25,19 @@ import com.google.gwt.user.client.ui.Widget;
  * <br/>
  * @author jeterson
  */
-public class DataGridHeader extends DataGridWidget {
+public interface Resources extends ClientBundle{
 
-	private ArrayList<DataGridRow> rows = new ArrayList<DataGridRow>();
-	public DataGridHeader() {
-		super("thead");
-	}
+	public static final Resources INSTANCE = GWT.create(Resources.class);
 	
-	@Override
-	public void add(Widget w) {
-		super.add(w);
-		if(w instanceof DataGridRow){
-			rows.add((DataGridRow) w);
-		}
-	}
+	@Source("datatable-bootstrap.js")
+	TextResource datatable_bootstrap_js();
+	
+	@Source("datatable.min.js")
+	TextResource datatable_min_js();
+	
+	@Source("table-datatable-scroller.min.js")
+	TextResource table_datatable_scroller_min_js();
+	
+	@Source("jquery-2.2.4.min.js")
+	TextResource jquery_2_2_4_min_js();
 }

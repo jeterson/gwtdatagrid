@@ -1,11 +1,12 @@
-package com.jeterson.gwtdatagrid.client;
+package com.jeterson.gwtdatagrid.client.js;
 
-import java.util.ArrayList;
-
-import com.google.gwt.user.client.ui.Widget;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
 /**
- * <code>Thead</code> element
+ * Options do objeto {@link com.jeterson.gwtdatagrid.client.js.JsDataTable}
+ * Veja em: {@link https://datatables.net/}
  * 
  * <br/>
  * 
@@ -26,18 +27,14 @@ import com.google.gwt.user.client.ui.Widget;
  * <br/>
  * @author jeterson
  */
-public class DataGridHeader extends DataGridWidget {
+@JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
+public class JsDataTableOptions {
 
-	private ArrayList<DataGridRow> rows = new ArrayList<DataGridRow>();
-	public DataGridHeader() {
-		super("thead");
-	}
+	@JsProperty
+	public boolean scroller;
+	@JsProperty
+	public boolean deferRender;
+	@JsProperty
+	public int scrollY;
 	
-	@Override
-	public void add(Widget w) {
-		super.add(w);
-		if(w instanceof DataGridRow){
-			rows.add((DataGridRow) w);
-		}
-	}
 }
